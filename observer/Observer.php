@@ -1,16 +1,29 @@
 <?php
 
-namespace github\bennysitu\designpattern\observer;
+namespace github\designpattern\observer;
 
+/**
+ * Abstract observer entity that act upon subject state change
+ */
 abstract class Observer {
 
+	/**
+	 * @param Subject
+	 */
 	public function __construct( Subject $subject ) {
-		$subjct->attach( $this );
+		$subject->attach( $this );
 	}
 
+	/**
+	 * Update when a subject changes its state
+	 *
+	 * @param Subject
+	 */
 	public function update( Subject $subject ) {
-		if ( $subject->getState() && method_exists( $this, 'updatePost' . ucfirst( $subject->getState() )  )  ) {
-			call_user_func( array( $this, 'updatePost' . ucfirst( $subject->getState() ) ), array( $subject ) );
+		$state  = $subject->getState();
+		$method = 'updateOn' . ucfirst( $subject->getState() );
+		if ( $state && method_exists( $this, $method  )  ) {
+			call_user_func_array( array( $this, $method ), array( $subject ) );
 		}		
 	}
 
