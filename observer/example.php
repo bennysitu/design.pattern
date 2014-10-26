@@ -1,6 +1,6 @@
 <?php
 
-namespace github\designpattern\observer;
+namespace designpattern\observer;
 
 require_once( 'Observer.php' );
 require_once( 'Subject.php' );

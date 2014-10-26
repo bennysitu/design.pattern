@@ -1,6 +1,6 @@
 <?php
 
-namespace github\designpattern\observer;
+namespace designpattern\observer;
 
 /**
  * Abstract observer entity that act upon subject state change

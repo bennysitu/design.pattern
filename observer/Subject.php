@@ -1,6 +1,6 @@
 <?php
 
-namespace github\designpattern\observer;
+namespace designpattern\observer;
 
 /**
  * Abstract subject entity that publishes event
